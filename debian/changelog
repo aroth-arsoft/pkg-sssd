@@ -1,3 +1,9 @@
+sssd (1.13.4-3.1~aroth1) xenial; urgency=medium
+
+  * include patches for leaking file descriptors
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Sat, 17 Sep 2016 09:37:39 +0200
+
 sssd (1.13.4-3) unstable; urgency=medium
 
   * common: Add /var/lib/sss/gpo_cache. (LP: #1579092)

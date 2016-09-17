@@ -16,11 +16,9 @@ Reviewed-by: Petr Cech <pcech@redhat.com>
  src/providers/ad/ad_machine_pw_renewal.c | 28 +++++++++++++++-------------
  1 file changed, 15 insertions(+), 13 deletions(-)
 
-diff --git a/src/providers/ad/ad_machine_pw_renewal.c b/src/providers/ad/ad_machine_pw_renewal.c
-index b0d2cf6..205e623 100644
 --- a/src/providers/ad/ad_machine_pw_renewal.c
 +++ b/src/providers/ad/ad_machine_pw_renewal.c
-@@ -101,8 +101,7 @@ struct renewal_state {
+@@ -101,8 +101,7 @@
      struct tevent_timer *timeout_handler;
      struct tevent_context *ev;
  
@@ -30,7 +28,7 @@ index b0d2cf6..205e623 100644
  };
  
  static void ad_machine_account_password_renewal_done(struct tevent_req *subreq);
-@@ -140,8 +139,15 @@ ad_machine_account_password_renewal_send(TALLOC_CTX *mem_ctx,
+@@ -140,8 +139,15 @@
  
      state->ev = ev;
      state->child_status = EFAULT;
@@ -48,8 +46,8 @@ index b0d2cf6..205e623 100644
  
      server_name = be_fo_get_active_server_name(be_ctx, AD_SERVICE_NAME);
      talloc_zfree(renewal_data->extra_args[0]);
-@@ -183,13 +189,13 @@ ad_machine_account_password_renewal_send(TALLOC_CTX *mem_ctx,
-         DEBUG(SSSDBG_CRIT_FAILURE, "Could not exec renewal child\n");
+@@ -185,13 +191,13 @@
+         }
      } else if (child_pid > 0) { /* parent */
  
 -        state->read_from_child_fd = pipefd_from_child[0];
@@ -66,7 +64,7 @@ index b0d2cf6..205e623 100644
  
          /* Set up SIGCHLD handler */
          ret = child_handler_setup(ev, child_pid, NULL, NULL, &state->child_ctx);
-@@ -210,7 +216,7 @@ ad_machine_account_password_renewal_send(TALLOC_CTX *mem_ctx,
+@@ -212,7 +218,7 @@
              goto done;
          }
  
@@ -75,7 +73,7 @@ index b0d2cf6..205e623 100644
          if (subreq == NULL) {
              DEBUG(SSSDBG_OP_FAILURE, "read_pipe_send failed.\n");
              ret = ERR_RENEWAL_CHILD;
-@@ -262,10 +268,6 @@ static void ad_machine_account_password_renewal_done(struct tevent_req *subreq)
+@@ -264,10 +270,6 @@
                               "---adcli output end---\n",
                               (int) buf_len, buf);
  
@@ -86,6 +84,3 @@ index b0d2cf6..205e623 100644
      tevent_req_done(req);
      return;
  }
--- 
-2.7.4
-

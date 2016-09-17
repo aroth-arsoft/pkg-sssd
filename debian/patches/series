@@ -1,0 +1,4 @@
+ipa-terminate-if-view-name-fails.diff
+gpo-add-unity-to-ad-gpo-map-interactive.diff
+fix_leaks.diff
+ad-do-not-leak-file-descriptors-during-machine-passw.patch

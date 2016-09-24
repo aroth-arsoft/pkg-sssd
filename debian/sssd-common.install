@@ -1,4 +1,6 @@
 lib/systemd/system/sssd.service
+lib/systemd/system/sssd-secrets.service
+lib/systemd/system/sssd-secrets.socket
 usr/bin/sss_ssh_authorizedkeys
 usr/bin/sss_ssh_knownhostsproxy
 usr/lib/*/cifs-utils/cifs_idmap_sss.so
@@ -25,6 +27,8 @@ usr/lib/*/sssd/sssd_nss
 usr/lib/*/sssd/sssd_pam
 usr/lib/*/sssd/sssd_ssh
 usr/lib/*/sssd/sssd_sudo
+usr/lib/*/sssd/sssd_secrets
+usr/lib/*/sssd/conf/sssd.conf
 usr/sbin/sssd
 usr/share/locale/*/LC_MESSAGES/*
 usr/share/man/man1/sss_ssh_authorizedkeys.1*
@@ -35,4 +39,6 @@ usr/share/man/man5/sssd-sudo.5*
 usr/share/man/man5/sssd.conf.5*
 usr/share/man/man8/sssd.8*
 usr/share/man/man8/sssd_krb5_locator_plugin.8*
+usr/share/man/man8/idmap_sss.8*
+usr/share/man/man8/sssctl.8*
 usr/share/sssd/*

@@ -25,6 +25,8 @@ Build-Depends:
  libdhash-dev,
  libglib2.0-dev,
  libini-config-dev,
+ libjansson-dev,
+ libhttp-parser-dev,
  libkeyutils-dev [linux-any],
  libkrb5-dev (>= 1.12),
  libldap2-dev,

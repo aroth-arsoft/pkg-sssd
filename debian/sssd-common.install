@@ -1,3 +1,4 @@
+etc/pam.d/sssd-shadowutils
 lib/systemd/system/sssd.service
 lib/systemd/system/sssd-secrets.service
 lib/systemd/system/sssd-secrets.socket

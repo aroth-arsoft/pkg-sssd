@@ -1,3 +1,15 @@
+sssd (1.14.2-0.1~aroth1) yakkety; urgency=medium
+
+  * new upstream version 1.14.2
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Sat, 03 Dec 2016 11:05:06 +0100
+
+sssd (1.14.1-0.1~aroth7) xenial; urgency=medium
+
+  * use makefile escape seq
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Mon, 26 Sep 2016 06:50:18 +0200
+
 sssd (1.14.1-0.1~aroth6) xenial; urgency=medium
 
   * escape replacement string
@@ -19,13 +31,13 @@ sssd (1.14.1-0.1~aroth4) xenial; urgency=medium
 
 sssd (1.14.1-0.1~aroth3) xenial; urgency=medium
 
-  * add	libjansson-dev 
+  * add libjansson-dev
 
  -- Andreas Roth <aroth@arsoft-online.com>  Sat, 24 Sep 2016 16:48:00 +0200
 
 sssd (1.14.1-0.1~aroth2) xenial; urgency=medium
 
-  * add	libhttp-parser-dev
+  * add libhttp-parser-dev
 
  -- Andreas Roth <aroth@arsoft-online.com>  Sat, 24 Sep 2016 16:42:50 +0200
 

@@ -1,3 +1,37 @@
+sssd (1.14.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Add adcli to sssd-ad Recommends. (LP: #1590471)
+  * accept-krb5-1.15.diff: Allow building PAC responder with MIT krb5
+    1.15. (Closes: #843385)
+  * common.install: Add sssd-secrets manpage.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Nov 2016 10:47:15 +0200
+
+sssd (1.14.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * ipa-terminate-if-view-name-fails.diff,
+    gpo-add-unity-to-ad-gpo-map-interactive.diff:
+    Dropped, upstream.
+  * sssd-common.dirs: Add etc/sssd/conf.d for config snippets.
+  * control: Add libhttp-parser-dev and libjansson-dev to build-deps.
+  * sssd-tools.install: Add sssctl.
+  * sssd-common.install: Add sssd-secrets and winbind idmap plugin.
+  * Drop the upstart job, it was only shipped on Ubuntu which has
+    switched to systemd.
+  * rules, default, import-daemon-opts.diff: Import daemon options from
+    default/sssd also with systemd. (LP: #1587395)
+  * rules: Don't install a default config file.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 05 Oct 2016 14:20:37 +0300
+
+sssd (1.14.2-0.1~aroth2) yakkety; urgency=medium
+
+  * install man page for sssd-secrets
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Sat, 03 Dec 2016 11:21:50 +0100
+
 sssd (1.14.2-0.1~aroth1) yakkety; urgency=medium
 
   * new upstream version 1.14.2

@@ -23,3 +23,4 @@ usr/share/man/man8/sss_seed.8*
 usr/share/man/man8/sss_useradd.8*
 usr/share/man/man8/sss_userdel.8*
 usr/share/man/man8/sss_usermod.8*
+usr/share/man/man8/sssctl.8*

@@ -1,3 +1,9 @@
+sssd (1.14.2-1.1~aroth2) yakkety; urgency=medium
+
+  * fixed ifp service
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Mon, 26 Dec 2016 15:24:50 +0100
+
 sssd (1.14.2-1.1~aroth1) yakkety; urgency=medium
 
   * backport latest ubuntu changes

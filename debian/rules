@@ -71,9 +71,6 @@ override_dh_install:
 	rm -f $(CURDIR)/debian/tmp/usr/lib/*/sssd/conf/sssd.conf
 	rm -f $(CURDIR)/debian/tmp/etc/pam.d/sssd-shadowutils
 
-	# patch the ${prefix} in dbus service file
-	sed -i 's@$${prefix}@/usr@' $(CURDIR)/debian/tmp/usr/share/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
-
 	# match nn/nn/nnnn, replace with the date from changelog
 	sed -i 's/[0-1][0-9]\/[0-3][0-9]\/[0-9][0-9][0-9][0-9]/${PKGDATE}/g' $(CURDIR)/debian/tmp/usr/share/man/man*/*
 

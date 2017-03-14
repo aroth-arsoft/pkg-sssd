@@ -1,6 +1,15 @@
 lib/systemd/system/sssd.service
-lib/systemd/system/sssd-secrets.service
-lib/systemd/system/sssd-secrets.socket
+#lib/systemd/system/sssd-sudo.service
+#lib/systemd/system/sssd-sudo.socket
+#lib/systemd/system/sssd-ssh.service
+#lib/systemd/system/sssd-ssh.socket
+#lib/systemd/system/sssd-autofs.service
+#lib/systemd/system/sssd-autofs.socket
+#lib/systemd/system/sssd-pam.service
+#lib/systemd/system/sssd-pam.socket
+#lib/systemd/system/sssd-pam-priv.socket
+#lib/systemd/system/sssd-nss.service
+#lib/systemd/system/sssd-nss.socket
 usr/bin/sss_ssh_authorizedkeys
 usr/bin/sss_ssh_knownhostsproxy
 usr/lib/*/cifs-utils/cifs_idmap_sss.so
@@ -26,7 +35,6 @@ usr/lib/*/sssd/sssd_autofs
 usr/lib/*/sssd/sssd_be
 usr/lib/*/sssd/sssd_nss
 usr/lib/*/sssd/sssd_pam
-usr/lib/*/sssd/sssd_secrets
 usr/lib/*/sssd/sssd_ssh
 usr/lib/*/sssd/sssd_sudo
 usr/sbin/sssd
@@ -34,7 +42,6 @@ usr/share/locale/*/LC_MESSAGES/*
 usr/share/man/man1/sss_ssh_authorizedkeys.1*
 usr/share/man/man1/sss_ssh_knownhostsproxy.1*
 usr/share/man/man5/sss_rpcidmapd.5*
-usr/share/man/man5/sssd-secrets.5*
 usr/share/man/man5/sssd-simple.5*
 usr/share/man/man5/sssd-sudo.5*
 usr/share/man/man5/sssd.conf.5*

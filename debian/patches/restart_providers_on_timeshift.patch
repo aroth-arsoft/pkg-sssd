@@ -1,0 +1,24 @@
+Description: Restart the providers after a time shift has been detected
+ This patch restarts the providers using the already implemented SIGUSR2
+ for method .resetOffline (used after netlink detects an interface change).
+ By doing this, events like LDAP connection retries will be executed
+ immediately instead of having to wait the time shifted (potentially hours)
+ to get to its normal schedule.
+
+Author: Victor Tapia <victor.tapia@canonical.com>
+Bug: https://fedorahosted.org/sssd/ticket/3285
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1641875
+Last-Update: 2017-02-15
+
+--- a/src/util/util_watchdog.c
++++ b/src/util/util_watchdog.c
+@@ -158,6 +158,9 @@
+               "[%d]: %s\n", ret, sss_strerror(ret));
+         orderly_shutdown(1);
+     }
++    if (getpid() == getpgrp()) {
++        kill(-getpgrp(), SIGUSR2);
++    }
+ }
+ 
+ int setup_watchdog(struct tevent_context *ev, int interval)

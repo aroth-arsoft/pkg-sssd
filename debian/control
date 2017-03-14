@@ -1,7 +1,8 @@
 Source: sssd
 Section: utils
 Priority: extra
-Maintainer: Debian SSSD Team <pkg-sssd-devel@lists.alioth.debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian SSSD Team <pkg-sssd-devel@lists.alioth.debian.org>
 Uploaders: Timo Aaltonen <tjaalton@debian.org>
 Build-Depends:
  autopoint,
@@ -24,9 +25,7 @@ Build-Depends:
  libdbus-1-dev,
  libdhash-dev,
  libglib2.0-dev,
- libhttp-parser-dev,
  libini-config-dev,
- libjansson-dev,
  libkeyutils-dev [linux-any],
  libkrb5-dev (>= 1.12),
  libldap2-dev,
@@ -121,7 +120,7 @@ Depends:
  sssd-krb5-common (= ${binary:Version}),
  ${misc:Depends},
  ${shlibs:Depends}
-Recommends:
+Suggests:
  adcli,
 Breaks: sssd (<< 1.10.0~beta2-1)
 Replaces: sssd (<< 1.10.0~beta2-1)

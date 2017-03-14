@@ -1,3 +1,74 @@
+sssd (1.15.0-3ubuntu4) zesty; urgency=medium
+
+  * Rebuild against new samba/libldb. (LP: #1664785)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 05 Mar 2017 13:30:40 +0200
+
+sssd (1.15.0-3ubuntu3) zesty; urgency=medium
+
+  * d/p/restart_providers_on_timeshift.patch: Use SIGUSR2 after watchdog
+    detects time shift to execute pending scheduled tasks that could
+    be stuck (LP: #1641875)
+
+ -- Victor Tapia <victor.tapia@canonical.com>  Wed, 15 Feb 2017 17:05:05 +0100
+
+sssd (1.15.0-3ubuntu2) zesty; urgency=medium
+
+  * Demote sssd-ad Recommends to Suggests. This fixes a component mismatch in
+    Ubuntu, but also we believe in LP 1590471 that it shouldn't be required for
+    full functionality of sssd-ad anyway. This has also been done in Debian VCS
+    in commit d26fd6b.
+
+ -- Robie Basak <robie.basak@ubuntu.com>  Thu, 09 Feb 2017 13:34:01 +0000
+
+sssd (1.15.0-3ubuntu1) zesty; urgency=medium
+
+  * Build without the secrets service as libhttp-parser2.1 is in universe. An
+    MIR is pending in LP 1638957; when this is complete, we can revert this.
+    - Configure with --without-secrets.
+    - Drop build depends on libhttp-parser-dev and libjansson-dev. These are
+      only needed for the "secrets service".
+    - Remove secrets service -related files from d/sssd-common.install and in
+      d/rules.
+
+ -- Robie Basak <robie.basak@ubuntu.com>  Tue, 07 Feb 2017 19:37:45 +0000
+
+sssd (1.15.0-3) unstable; urgency=medium
+
+  * rules, install: Remove responder service and socket files for now, the
+    sockets weren't supposed to be enabled anyway and can cause issues.
+    (Closes: #854048)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 04 Feb 2017 18:34:06 +0200
+
+sssd (1.15.0-2) unstable; urgency=medium
+
+  * import-daemon-opts.diff, sssd.default: Drop the patch modifying sssd
+    service file, and revert the daemon options for sysvinit.
+    /etc/default/sssd is now only for the initscript (Closes: #852719)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 26 Jan 2017 21:29:58 +0200
+
+sssd (1.15.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #852450) (LP: #1566508)
+  * Drop upstreamed patches.
+  * sssd-common.sssd.default, import-daemon-opts.diff: Change default
+    daemon options to match current upstream.
+  * sssd-dbus.install: Drop libsss_config, which was removed.
+  * sssd-{ad,common,dbus}.install: Add systemd service and socket files
+    for pac, sudo, ssh, autofs, pam, nss and ifp responders.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 25 Jan 2017 22:46:02 +0200
+
+sssd (1.14.2-2.1) unstable; urgency=low
+
+  * Non-maintainer upload with maintainer approval.
+  * ldap-blocking.diff: Fix ldaps connections by removing NON_BLOCKING from
+    socket options (Closes: 849756).  Patch from upstream pull request #67.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Tue, 24 Jan 2017 22:26:17 +0000
+
 sssd (1.14.2-2.1~aroth1) yakkety; urgency=medium
 
   * backport IFP fix
